@@ -1,16 +1,11 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-    <title>Gerenciador de Usuários</title>
-</head>
-<body>
 <?php
 require "config.php";
+require "head.php";
 ?>
+<body>
+<div class="container">
+<div class="tabela">
+<h1>Tabela de Gerenciamento</h1>
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -21,7 +16,7 @@ require "config.php";
     </thead>
     <tbody>
         <?php
-            $sql = "SELECT * FROM usuarios";
+            $sql = "SELECT * FROM usuarios order by id asc";
             $sql = $pdo->query($sql);
             if($sql->rowCount() > 0) {
                 foreach($sql->fetchAll() as $usuario) {
@@ -36,5 +31,7 @@ require "config.php";
     </tbody>
 </table>
 <a href="adicionar.php" class="btn btn-primary btn-lg">Adicionar Novo Usuário</a>
+</div>
+</div>
 </body>
 </html>
