@@ -8,6 +8,33 @@
     <title>Gerenciador de Usuários</title>
 </head>
 <body>
-    
+<?php
+require "config.php";
+?>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>E-mail</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php
+            $sql = "SELECT * FROM usuarios";
+            $sql = $pdo->query($sql);
+            if($sql->rowCount() > 0) {
+                foreach($sql->fetchAll() as $usuario) {
+                    echo "<tr>";
+                    echo "<td>".$usuario['nome']."</td>";
+                    echo "<td>".$usuario['email']."</td>";
+                    echo "<td><a href='editar.php?id=".$usuario['id']."'>Editar</a> - <a href='excluir.php?id=".$usuario['id']."'>Excluir</a></td>";
+                    echo "</tr>";
+                }
+            }
+        ?>
+    </tbody>
+</table>
+<a href="adicionar.php" class="btn btn-primary btn-lg">Adicionar Novo Usuário</a>
 </body>
 </html>
