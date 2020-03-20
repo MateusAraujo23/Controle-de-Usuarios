@@ -1,4 +1,27 @@
 body {
     padding: 5px;
     margin: 5px;
+    background: #686de0;
+    font-family: 'Roboto', sans-serif;
+}
+.btn {
+    margin-bottom: 10px;
+}
+.form {
+    border-radius: 10px;
+    background: #FFFFFF;
+    padding: 50px;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+    width: 80%;
+    margin: auto;
+}
+h1 {
+    font-size: 30px;
+}
+.tabela {
+    border-radius: 10px;
+    background: #FFFFFF;
+    box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+    margin: auto;
+    padding: 50px;
 }
