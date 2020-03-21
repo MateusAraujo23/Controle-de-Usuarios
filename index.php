@@ -16,7 +16,7 @@ require "head.php";
     </thead>
     <tbody>
         <?php
-            $sql = "SELECT * FROM usuarios order by id asc";
+            $sql = "SELECT * FROM usuarios order by nome asc";
             $sql = $pdo->query($sql);
             if($sql->rowCount() > 0) {
                 foreach($sql->fetchAll() as $usuario) {
