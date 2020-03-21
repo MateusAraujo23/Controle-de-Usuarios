@@ -25,3 +25,10 @@ h1 {
     margin: auto;
     padding: 50px;
 }
+button a {
+    color: #FFFFFF;
+}
+button a:hover {
+    text-decoration: none;
+    color: #FFFFFF;
+}
