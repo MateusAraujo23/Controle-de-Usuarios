@@ -1,4 +1,4 @@
-#Sistema para estudo feito em PHP
+# Sistema para estudo feito em PHP
 
 Sistema simples de controle de usuários onde é possível inserir, excluir, modificar e exibir usuários de um Banco de Dados MYSQL através de consultas realizadas com PHP.
 
