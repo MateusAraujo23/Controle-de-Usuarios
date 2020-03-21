@@ -14,22 +14,26 @@ require "head.php";
         Senha</br>
         <input class="form-control" type="password" name="senha"></br>
         <button type="submit" class="btn btn-primary">Cadastrar</button>
+        <button class="btn btn-primary"><a href="index.php">Início</a></button>
         </div>
     </form>
-</div>
-</div>
 <?php
 
 if(isset($_POST['nome']) && !empty($_POST['nome'])) {
-    $nome = addslashes($_POST['nome']);
-    $email = addslashes($_POST['email']);
-    $senha = md5(addslashes($_POST['senha']));
+    if(isset($_POST['senha']) && !empty($_POST['senha'])) {
+        $nome = addslashes($_POST['nome']);
+        $email = filter_var(addslashes($_POST['email']), FILTER_VALIDATE_EMAIL);
+        $senha = md5(addslashes($_POST['senha']));
 
-    $sql = "INSERT INTO usuarios SET nome = '$nome', email = '$email', senha = '$senha'";
-    $pdo->query($sql);
+        $sql = "INSERT INTO usuarios SET nome = '$nome', email = '$email', senha = '$senha'";
+        $pdo->query($sql);
 
-    header("Location: index.php");
+        echo "<h2>Usuário Adicionado</h2>";
 
+        header("Refresh:2.5; url=index.php");
+    }
 } else {
 }
 ?>
+</div>
+</div>
